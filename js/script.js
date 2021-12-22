@@ -10969,6 +10969,68 @@ $('.tags__inner-title').click(function(e){
     $('.tabs').hide('tabs')
     // $('tabs--active').hide()
     $($(this).attr('href')).show('tabs')
+})
+$('.tab__link').click(function(e){
+    e.preventDefault();
+    $('.tab__link').each(function(){
+        $('.tab__link').removeClass('tab__link--active')
+        $('.tab__link').removeClass('tab--active')
+    })
+   $(this).addClass('tab__link--active')
+   $(this).addClass('tab--active')
+    $('.tab__inner').hide('tab__inner')
+    $($(this).attr('href')).show('tabs')
+    
+        
+
+    // $($(this).attr('href')).addClass('tab__link--active')
+})
+
+$('.more__inner-link').click(function(){
+    $('.more__img').addClass('more__img--active')
+    $('.more__open').addClass('more__open--active')
+    $('.more__close').addClass('more__close--active')
+    $('.more__inner').addClass('more__inner--active')
+})
+$('.more__close').click(function(){
+    $('.more__img').removeClass('more__img--active')
+    $('.more__open').removeClass('more__open--active')
+    $('.more__close').removeClass('more__close--active')
+    $('.more__inner').removeClass('more__inner--active')
+})
+
+// SPOILER
+$('.spoiler__inner').click(function(){
+    // $(this).find('.spoiler__inner-text').toggleClass('spoiler__inner-text--active')
+    $(this).find('.spoiler__inner-text').fadeToggle()
+
+})
+// $('.spoiler__inner').click(function(){
+//     $(this).find('.spoiler__inner-text').hide('spoiler__inner-text--active')
+// })
+
+// SALE
+// open sale
+$('.header__top-bag').click(function(){
+    $('.sale').addClass('sale--active')
+})
+$('.sale__close').click(function(){
+    $('.sale').removeClass('sale--active')
+})
+// calculator
+i = this.$('.sale-input').val()
+plus = this.$('.sale__body').find('.sale__body-btn-plus')
+minus = this.$('.sale__body').find('.sale__body-btn-minus')
+value = this.$('.sale__body').find('.sale-input').val()
+console.log(i)
+plus.click(function(){
+    
+    value++
+    console.log(value)
+})
+minus.click(function(){
+    value--
+    console.log(value)
 });
 
 // ("bootstrap.bundle.js");
