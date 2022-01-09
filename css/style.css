@@ -279,7 +279,8 @@ body {
 }
 
 .header {
-  background: url("../img/bg_mobile.png") center;
+  background-image: url("../img/bg_mobile.png");
+  background-position: center;
   height: calc(100vh + 70px);
   background-size: cover;
   position: relative;
@@ -532,6 +533,10 @@ body {
   transform: translateX(0);
 }
 
+.gallery {
+  padding-top: 100px;
+}
+
 .gallery > .container {
   display: contents;
 }
@@ -588,7 +593,7 @@ body {
 }
 
 .slick__card {
-  max-width: 260px;
+  max-width: 290px;
   width: 100%;
   margin: 0 auto;
 }
@@ -766,9 +771,9 @@ body {
 
 .tags__social {
   position: absolute;
-  top: 35%;
+  top: 38%;
   z-index: 1;
-  right: 50%;
+  right: 43%;
 }
 
 .tabs {
@@ -1256,6 +1261,8 @@ body {
 
 .slick-slide {
   margin-right: 0.4%;
+  width: 240px;
+  margin-left: 18px;
 }
 
 /* Слайд активный (показывается) */
@@ -1296,6 +1303,7 @@ body {
   background: transparent;
   font-size: 0;
   border: none;
+  padding-right: 17px;
 }
 
 /* Стрелка не активная */
@@ -1547,6 +1555,10 @@ body {
     align-items: center;
   }
 
+  .footer .footer__list-link:hover {
+    color: #000;
+  }
+
   .main__inner {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1668,6 +1680,7 @@ body {
 
   .header {
     background-image: url("../img/background.png");
+    background-position: center;
     height: calc(100vh + 175px);
     position: relative;
   }
@@ -1937,6 +1950,15 @@ body {
     padding: 11px 65px;
   }
 
+  .mute__btn:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+
   .tags__inner-name {
     display: contents;
   }
@@ -2099,13 +2121,23 @@ body {
   }
 }
 
+@media (min-width: 1440px) {
+  .slick-slide {
+    width: 290px;
+  }
+
+  .slick-arrow.slick-next {
+    right: -3.9%;
+  }
+}
+
 @media only screen and (min-height: 812px) {
   .header__body-btn {
     margin-bottom: calc(47.1% + 71px);
   }
 }
 @supports (-webkit-appearance:none){
-.header{background:url("../img/bg_mobile.png") center}
+.header{background-image:url("../img/bg_mobile.png")}
 .slick-arrow.slick-prev{background-image:url("../img/prev.svg")}
 .slick-arrow.slick-next{background-image:url("../img/next.svg")}
 }
@@ -2151,6 +2183,14 @@ body {
 }
 
  @media (min-width: 1200px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (min-width: 1440px){
 
 @supports (-webkit-appearance:none){
 

@@ -10908,7 +10908,7 @@ $(document).ready(function(){
     $('.slick').slick({
       mobileFirst: true,
       variableWidth: true,
-      arrows: false,
+      arrows: true,
      responsive: [{
          breakpoint: 768,
          settings:{
@@ -10954,14 +10954,20 @@ header.click(function(){
         searchBtn.css({'display':'block'})
     }, 500)
 })
-content.click(function(){
+
+$(document).click( function(e){
+    if ( $(e.target).closest('.header__top-search').length ) {
+        // клик внутри элемента 
+        return;
+    }
+    // клик снаружи элемента 
+    $('.search').fadeOut();
     search.removeClass('active')
     setTimeout(function(){
         searchBtn.css({'display':'block'})
         tel.css({'display':'block'})
     }, 500)
-})
-
+});
 // tabs
 
 $('.tags__inner-title').click(function(e){
@@ -10970,21 +10976,7 @@ $('.tags__inner-title').click(function(e){
     // $('tabs--active').hide()
     $($(this).attr('href')).show('tabs')
 })
-$('.tab__link').click(function(e){
-    e.preventDefault();
-    $('.tab__link').each(function(){
-        $('.tab__link').removeClass('tab__link--active')
-        $('.tab__link').removeClass('tab--active')
-    })
-   $(this).addClass('tab__link--active')
-   $(this).addClass('tab--active')
-    $('.tab__inner').hide('tab__inner')
-    $($(this).attr('href')).show('tabs')
-    
-        
 
-    // $($(this).attr('href')).addClass('tab__link--active')
-})
 
 $('.more__inner-link').click(function(){
     $('.more__img').addClass('more__img--active')
@@ -11001,37 +10993,20 @@ $('.more__close').click(function(){
 
 // SPOILER
 $('.spoiler__inner').click(function(){
-    // $(this).find('.spoiler__inner-text').toggleClass('spoiler__inner-text--active')
+   
     $(this).find('.spoiler__inner-text').fadeToggle()
 
 })
-// $('.spoiler__inner').click(function(){
-//     $(this).find('.spoiler__inner-text').hide('spoiler__inner-text--active')
-// })
+
 
 // SALE
-// open sale
 $('.header__top-bag').click(function(){
     $('.sale').addClass('sale--active')
 })
 $('.sale__close').click(function(){
     $('.sale').removeClass('sale--active')
 })
-// calculator
-i = this.$('.sale-input').val()
-plus = this.$('.sale__body').find('.sale__body-btn-plus')
-minus = this.$('.sale__body').find('.sale__body-btn-minus')
-value = this.$('.sale__body').find('.sale-input').val()
-console.log(i)
-plus.click(function(){
-    
-    value++
-    console.log(value)
-})
-minus.click(function(){
-    value--
-    console.log(value)
-});
+;
 
 // ("bootstrap.bundle.js");
 /*
